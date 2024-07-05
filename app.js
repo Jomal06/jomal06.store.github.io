@@ -72,7 +72,7 @@ function addOrder(){
 }
 
 function totalOrder(){
-    let total = 0;
+    
     var subtotal1 = (parseFloat(qty1.value)*parseFloat(price1.textContent));
     total += subtotal1;
     var subtotal2 = (parseFloat(qty2.value)*parseFloat(price2.textContent));
