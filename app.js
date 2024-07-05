@@ -71,29 +71,22 @@ function addOrder(){
     }
 }
 
-function totalOrder(){
-    
+function updateTotal(){
     var subtotal1 = (parseFloat(qty1.value)*parseFloat(price1.textContent));
-    total += subtotal1;
     var subtotal2 = (parseFloat(qty2.value)*parseFloat(price2.textContent));
-    total += subtotal2;
     var subtotal3 = (parseFloat(qty3.value)*parseFloat(price3.textContent));
-    total += subtotal3;
     var subtotal4 = (parseFloat(qty4.value)*parseFloat(price4.textContent));
-    total += subtotal4;
     var subtotal5 = (parseFloat(qty5.value)*parseFloat(price5.textContent));
-    total += subtotal5;
     var subtotal6 = (parseFloat(qty6.value)*parseFloat(price6.textContent));
-    total += subtotal6;
     var subtotal7 = (parseFloat(qty7.value)*parseFloat(price7.textContent));
-    total += subtotal7;
     var subtotal8 = (parseFloat(qty8.value)*parseFloat(price8.textContent));
-    total += subtotal8;
-
-    total.textContent = total.value;
+    var subtotal = subtotal1 + subtotal2 + subtotal3 + subtotal4 + subtotal5 + subtotal6 + subtotal7 + subtotal8;
+    total.textContent = subtotal.value;
 }
-totalOrder();
-if (cash)
+
+function updateChange(){
+    
+}
 
 qty1.addEventListener("keyup", addOrder);
 qty2.addEventListener("keyup", addOrder);
@@ -103,3 +96,6 @@ qty5.addEventListener("keyup", addOrder);
 qty6.addEventListener("keyup", addOrder);
 qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
+cash.addEventListener("keyup", updateChange);
+
+updateTotal();
