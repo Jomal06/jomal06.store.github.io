@@ -33,6 +33,7 @@ var price8 = document.getElementById("price8");
 var carts = document.getElementById("carts");
 var total = document.getElementById("total");
 var cash = document.getElementById("cash");
+var calculate = document.getElementById("calculate");
 var change = document.getElementById("change");
 
 function addOrder(){
@@ -69,6 +70,17 @@ function addOrder(){
         var order = qty8.value.toString() + ' pc/s x' + price8.textContent + '------' + product8.textContent + '------ Php' + (parseFloat(qty8.value)*parseFloat(price8.textContent)) + '\n';
         carts.textContent += order;
     }
+
+    var subtotal1 = (parseFloat(qty1.value)*parseFloat(price1.textContent));
+    var subtotal2 = (parseFloat(qty2.value)*parseFloat(price2.textContent));
+    var subtotal3 = (parseFloat(qty3.value)*parseFloat(price3.textContent));
+    var subtotal4 = (parseFloat(qty4.value)*parseFloat(price4.textContent));
+    var subtotal5 = (parseFloat(qty5.value)*parseFloat(price5.textContent));
+    var subtotal6 = (parseFloat(qty6.value)*parseFloat(price6.textContent));
+    var subtotal7 = (parseFloat(qty7.value)*parseFloat(price7.textContent));
+    var subtotal8 = (parseFloat(qty8.value)*parseFloat(price8.textContent));
+    var subtotal = subtotal1 + subtotal2 + subtotal3 + subtotal4 + subtotal5 + subtotal6 + subtotal7 + subtotal8;
+    total.textContent = subtotal.value;
 }
 
 function updateTotal(){
