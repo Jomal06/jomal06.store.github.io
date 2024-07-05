@@ -39,7 +39,7 @@ function addOrder(){
     carts.textContent="";
     if (parseFloat(qty.value) > 0){
         var order = qty1.value.toString() + ' pc/s x' + price1.textContent + '------' + product1.textContent + '------ Php' + (parseFloat(qty1.value)*parseFloat(price1.textContent)) + '\n';
-        carts.textContent += carts.value.toString() + "\n";
+        //carts.textContent += carts.value.toString() + "\n";
         carts.textContent += order;
     }
 }
@@ -53,11 +53,3 @@ qty5.addEventListener("keyup", addOrder);
 qty6.addEventListener("keyup", addOrder);
 qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
-qty1.addEventListener("keydown", addOrder);
-qty2.addEventListener("keydown", addOrder);
-qty3.addEventListener("keydown", addOrder);
-qty4.addEventListener("keydown", addOrder);
-qty5.addEventListener("keydown", addOrder);
-qty6.addEventListener("keydown", addOrder);
-qty7.addEventListener("keydown", addOrder);
-qty8.addEventListener("keydown", addOrder);
