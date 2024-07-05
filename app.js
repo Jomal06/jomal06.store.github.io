@@ -109,5 +109,5 @@ qty6.addEventListener("keyup", addOrder);
 qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
 cash.addEventListener("keyup", updateChange);
-
+calculate.addEventListener("click", updateChange);
 
