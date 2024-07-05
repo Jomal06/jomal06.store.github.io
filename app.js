@@ -85,7 +85,7 @@ function updateTotal(){
 }
 
 function updateChange(){
-    
+    updateTotal();
 }
 
 qty1.addEventListener("keyup", addOrder);
@@ -98,4 +98,4 @@ qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
 cash.addEventListener("keyup", updateChange);
 
-updateTotal();
+
