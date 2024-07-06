@@ -72,7 +72,7 @@ function addOrder(){
     }
 
 }
-
+/*
 function updateTotal(){
     const subtotal1 = (parseFloat(qty1.value) * parseFloat(price1.textContent)) || 0;
     const subtotal2 = (parseFloat(qty2.value) * parseFloat(price2.textContent)) || 0;
@@ -99,7 +99,7 @@ function updateChange(): void {
         change.textContent = '0.00';
     }
 }
-
+*/
 qty1.addEventListener("keyup", addOrder);
 qty2.addEventListener("keyup", addOrder);
 qty3.addEventListener("keyup", addOrder);
@@ -108,7 +108,7 @@ qty5.addEventListener("keyup", addOrder);
 qty6.addEventListener("keyup", addOrder);
 qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
-
+/*
 cash.addEventListener("keyup", updateTotal);
 calculate.addEventListener("click", updateChange);
-
+*/
