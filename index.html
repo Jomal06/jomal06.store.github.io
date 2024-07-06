@@ -137,8 +137,10 @@
             var cash = parseFloat(cashInput.value);
     
             if (!isNaN(total) && !isNaN(cash)) {
+                if (cash > total){
                 var change = cash - total;
                 changeInput.value = change.toFixed(2);
+                }
             } else {
                 changeInput.value = "";
             }
