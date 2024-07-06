@@ -71,33 +71,33 @@ function addOrder(){
         carts.textContent += order;
     }
 
-    var subtotal1 = (parseFloat(qty1.value)*parseFloat(price1.textContent));
-    var subtotal2 = (parseFloat(qty2.value)*parseFloat(price2.textContent));
-    var subtotal3 = (parseFloat(qty3.value)*parseFloat(price3.textContent));
-    var subtotal4 = (parseFloat(qty4.value)*parseFloat(price4.textContent));
-    var subtotal5 = (parseFloat(qty5.value)*parseFloat(price5.textContent));
-    var subtotal6 = (parseFloat(qty6.value)*parseFloat(price6.textContent));
-    var subtotal7 = (parseFloat(qty7.value)*parseFloat(price7.textContent));
-    var subtotal8 = (parseFloat(qty8.value)*parseFloat(price8.textContent));
-    var subtotal = subtotal1 + subtotal2 + subtotal3 + subtotal4 + subtotal5 + subtotal6 + subtotal7 + subtotal8;
-    total.textContent = subtotal.value;
 }
 
 function updateTotal(){
-    var subtotal1 = (parseFloat(qty1.value)*parseFloat(price1.textContent));
-    var subtotal2 = (parseFloat(qty2.value)*parseFloat(price2.textContent));
-    var subtotal3 = (parseFloat(qty3.value)*parseFloat(price3.textContent));
-    var subtotal4 = (parseFloat(qty4.value)*parseFloat(price4.textContent));
-    var subtotal5 = (parseFloat(qty5.value)*parseFloat(price5.textContent));
-    var subtotal6 = (parseFloat(qty6.value)*parseFloat(price6.textContent));
-    var subtotal7 = (parseFloat(qty7.value)*parseFloat(price7.textContent));
-    var subtotal8 = (parseFloat(qty8.value)*parseFloat(price8.textContent));
-    var subtotal = subtotal1 + subtotal2 + subtotal3 + subtotal4 + subtotal5 + subtotal6 + subtotal7 + subtotal8;
-    total.textContent = subtotal.value;
+    const subtotal1 = (parseFloat(qty1.value) * parseFloat(price1.textContent)) || 0;
+    const subtotal2 = (parseFloat(qty2.value) * parseFloat(price2.textContent)) || 0;
+    const subtotal3 = (parseFloat(qty3.value) * parseFloat(price3.textContent)) || 0;
+    const subtotal4 = (parseFloat(qty4.value) * parseFloat(price4.textContent)) || 0;
+    const subtotal5 = (parseFloat(qty5.value) * parseFloat(price5.textContent)) || 0;
+    const subtotal6 = (parseFloat(qty6.value) * parseFloat(price6.textContent)) || 0;
+    const subtotal7 = (parseFloat(qty7.value) * parseFloat(price7.textContent)) || 0;
+    const subtotal8 = (parseFloat(qty8.value) * parseFloat(price8.textContent)) || 0;
+    
+    const subtotal = subtotal1 + subtotal2 + subtotal3 + subtotal4 + subtotal5 + subtotal6 + subtotal7 + subtotal8;
+    total.textContent = subtotal.toFixed(2);
 }
 
-function updateChange(){
-    updateTotal();
+function updateChange(): void {
+    
+    const tendered = parseFloat(cash.value);
+
+    if (tendered >= total) {
+        const change = tendered - total;
+        change.textContent = change.toFixed(2);
+    } else {
+        alert('Cash tendered is less than the total amount.');
+        change.textContent = '0.00';
+    }
 }
 
 qty1.addEventListener("keyup", addOrder);
@@ -108,6 +108,7 @@ qty5.addEventListener("keyup", addOrder);
 qty6.addEventListener("keyup", addOrder);
 qty7.addEventListener("keyup", addOrder);
 qty8.addEventListener("keyup", addOrder);
-cash.addEventListener("keyup", updateChange);
+
+cash.addEventListener("keyup", updateTotal);
 calculate.addEventListener("click", updateChange);
 
